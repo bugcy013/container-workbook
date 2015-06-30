@@ -315,6 +315,13 @@ bash-4.2# mount -t tmpfs none /mnt
 mount: permission denied
 bash-4.2# exit
 ----------
+
+To get privilaged access, please run below command
+
+----------
+$ sudo docker run --privileged -t -i fedora /bin/bash
+----------
+
 === Return low level information about container
  
 ----------
@@ -378,6 +385,13 @@ docker run -d -i -t -p 8080 fedora bash
 
 ---------------
 $ ID=$(docker run --expose=22 -d -i -t rootconf:sshd /bin/bash)
+---------------
+
+=== Mount a host directory on a conatiner
+
+---------------
+$ docker run  -i -t -v /var/logs:/logs_from_host:ro fedora bash
+$ ls logs_from_host/
 ---------------
 
 === Remove an image
