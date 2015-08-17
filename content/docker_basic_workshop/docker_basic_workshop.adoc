@@ -400,6 +400,12 @@ $ ls logs_from_host/
 docker rmi <imagename>
 ---------------
 
+Remove all images
+
+---------------
+docker rmi $(docker images -q)
+---------------
+
 == DockerFiles
 
 === Building an image
